@@ -32,7 +32,6 @@ export const App: React.FC = () => {
   const reset = () => {
     setSortFlag(TypeSort.reset);
     setIsReversed(false);
-    setSortFlag(TypeSort.reset);
     setVisibileGoods(goodsFromServer);
   };
 
@@ -47,9 +46,7 @@ export const App: React.FC = () => {
     setIsReversed(prevState => {
       const newState = !prevState;
 
-      setVisibileGoods(
-        prevState ? [...visibileGoods].reverse() : [...visibileGoods].reverse(),
-      );
+      setVisibileGoods([...visibileGoods].reverse());
 
       return newState;
     });
